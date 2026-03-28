@@ -1,0 +1,81 @@
+# ─────────────────────────────────────────────
+# STARSHIP CONFIG
+# Schlicht aber elegant — Catppuccin Mocha Farben
+# Zeigt: Verzeichnis → Git → Docker → Dauer → Prompt
+# ─────────────────────────────────────────────
+
+# Prompt Format — zweizeilig für Übersicht
+format = """
+$directory$git_branch$git_status$docker_context$cmd_duration
+$character"""
+
+# Kein Zeilenabstand zwischen Commands
+add_newline = false
+
+# ─────────────────────────────────────────────
+# VERZEICHNIS
+# Zeigt max 3 Ebenen, kürzt davor ab
+# darkflare/ansible/roles statt /home/florian/...
+# ─────────────────────────────────────────────
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold #89b4fa"           # Catppuccin Blue
+
+# ─────────────────────────────────────────────
+# GIT
+# Branch + Status — nur wenn im Git Repo
+# ─────────────────────────────────────────────
+[git_branch]
+symbol = " "                    # Nerd Font Icon
+style = "bold #a6e3a1"           # Catppuccin Green
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold #f38ba8"           # Catppuccin Red
+modified = "!"                   # Ungespeicherte Änderungen
+untracked = "?"                  # Neue Files
+ahead = "⇡"                      # Commits vor Remote
+behind = "⇣"                     # Commits hinter Remote
+staged = "+"                     # Staged Changes
+
+# ─────────────────────────────────────────────
+# DOCKER
+# Zeigt nur wenn docker-compose.yml vorhanden
+# verhindert unnötiges Anzeigen überall
+# ─────────────────────────────────────────────
+[docker_context]
+symbol = " "                    # Nerd Font Icon
+style = "bold #89dceb"           # Catppuccin Sky
+only_with_files = true           # Nur bei compose/dockerfile
+
+# ─────────────────────────────────────────────
+# COMMAND DURATION
+# Zeigt Dauer wenn Command länger als 2s dauert
+# Nützlich für Ansible Runs, Docker Builds etc.
+# ─────────────────────────────────────────────
+[cmd_duration]
+min_time = 2_000
+style = "bold #f9e2af"           # Catppuccin Yellow
+format = " took [$duration]($style)"
+
+# ─────────────────────────────────────────────
+# PROMPT CHARACTER
+# ❯ grün bei Erfolg, rot bei Fehler
+# ─────────────────────────────────────────────
+[character]
+success_symbol = "[❯](bold #a6e3a1)"   # Catppuccin Green
+error_symbol = "[❯](bold #f38ba8)"     # Catppuccin Red
+
+# ─────────────────────────────────────────────
+# DEAKTIVIERT
+# Alles was nicht gebraucht wird — sauber halten
+# ─────────────────────────────────────────────
+[package]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
