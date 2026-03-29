@@ -11,7 +11,7 @@ syntax on                      " Syntax Highlighting
 set number relativenumber      " Absolute + relative Zeilennummern
                                " → '5k' = 5 Zeilen rauf, sofort sichtbar
 set cursorline                 " Aktuelle Zeile highlighten
-set colorcolumn=80             " Vertikale Linie bei 80 Zeichen
+" set colorcolumn=80             " Vertikale Linie bei 80 Zeichen
 set background=dark
 colorscheme catppuccin_mocha   " Theme — catppuccin muss in ~/.vim/colors/
 
