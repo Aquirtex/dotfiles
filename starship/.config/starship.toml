@@ -6,7 +6,7 @@
 
 # Prompt Format — zweizeilig für Übersicht
 format = """
-$directory$git_branch$git_status$docker_context$cmd_duration
+$username$hostname$directory$git_branch$git_status$docker_context$cmd_duration
 $character"""
 
 # Kein Zeilenabstand zwischen Commands
@@ -79,3 +79,16 @@ disabled = true
 
 [python]
 disabled = true
+
+# ─────────────────────────────────────────────
+# HOSTNAME
+# Only show when connected via SSH
+# ─────────────────────────────────────────────
+[hostname]
+ssh_only = true
+style = "bold #cba6f7"
+format = "[$hostname]($style) "
+
+[username]
+show_always = false
+format = "[${user}@](bold #cba6f7)"
