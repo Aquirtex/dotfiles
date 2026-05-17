@@ -6,6 +6,8 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+
 # ─────────────────────────────────────────────
 # ZINIT
 # Plugin Manager — wird automatisch installiert
