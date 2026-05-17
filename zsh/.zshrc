@@ -82,7 +82,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview \
 # ─────────────────────────────────────────────
 
 # Filesystem
-alias ls='eza --icons'                        # ls mit Icons
+alias ls='eza --icons --color=auto'                        # ls mit Icons
 alias ll='eza -la --icons --git'              # Detailansicht + Git Status
 alias tree='eza --tree --level=2'             # Verzeichnisbaum
 alias cat='bat --paging=never'                # cat mit Syntax-Highlighting
